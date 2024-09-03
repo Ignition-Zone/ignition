@@ -102,6 +102,6 @@ export class Process {
   @Column({ default: null })
   currentEnvBranch?: string;
 
-  @Column({ default: updateVersionType.bugfix })
+  @Column({ default: updateVersionType?.bugfix })
   updateVersionType?: updateVersionType;
 }

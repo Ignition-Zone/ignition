@@ -11,6 +11,10 @@ import { NamingStrategy } from './naming.strategies';
 import * as path from 'path';
 
 const { MONGODB_CONFIG, MYSQL_USER_CONFIG, MYSQL_DEVOPS_CONFIG } = getConfig();
+console.log('database---getConfig:')
+console.log('MONGODB_CONFIG:',MONGODB_CONFIG)
+console.log('MYSQL_USER_CONFIG:',MYSQL_USER_CONFIG)
+console.log('MYSQL_DEVOPS_CONFIG:',MYSQL_DEVOPS_CONFIG)
 
 // 静态文件处理与 webpack hmr 热更新冲突
 const MONGODB_DATABASE_CONFIG = {

@@ -45,3 +45,4 @@ lerna-debug.log*
 
 # lock
 pnpm-lock.yaml
+/data

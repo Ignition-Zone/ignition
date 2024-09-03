@@ -6,9 +6,9 @@ NODE_ENV:
 MONGODB_CONFIG:
   name: 'ignition_test' # 自定义次数据库链接名称
   type: mongodb # 数据库链接类型
-  url: 'mongodb://localhost:27017' # 数据库链接地址
+  url: 'mongodb://root:123456@localhost:27017/fast_gateway_test?authSource=admin' # 数据库链接地址
   username: 'root' # 数据库链接用户名
-  password: 'root123' # 数据库链接密码
+  password: '123456' # 数据库链接密码
   database: 'ignition_test' # 数据库名
   entities: 'mongo' # 自定义加载类型
   logging: false # 数据库打印日志
@@ -20,10 +20,14 @@ MYSQL_DEVOPS_CONFIG:
   host: 'localhost'
   port: 3306
   username: 'root'
-  password: 'root'
+  password: '123456'
   database: 'devops_test'
   entities: '' # 这里的命名一定要跟 MongoDB 里面的配置命名区分开
   synchronize: true
+  connectorPackage: 'mysql2'
+  extra: {
+        authPlugin: 'sha256_password',
+      }
 
 # MongoDB 是无模式的，所以即使在配置参数开启了 synchronize，启动项目的时候也不会去数据库创建对应的表，所以不用奇怪，并没有出错，
 # 但 Mysql 在每次应用程序启动时自动同步表结构，容易造成数据丢失，生产环境记得关闭，以免造成无可预计的损失。
@@ -33,10 +37,14 @@ MYSQL_USER_CONFIG:
   host: 'localhost'
   port: 3306
   username: 'root'
-  password: 'root'
+  password: '123456'
   database: 'user_test'
   entities: 'mysql' # 这里的命名一定要跟 MongoDB 里面的配置命名区分开
   synchronize: true
+  connectorPackage: 'mysql2'
+  extra: {
+        authPlugin: 'sha256_password',
+      }
 
 REDIS_CONFIG:
   host: 'localhost' # redis 链接

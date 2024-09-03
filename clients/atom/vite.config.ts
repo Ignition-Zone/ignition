@@ -24,7 +24,7 @@ export default defineConfig({
       '/api': {
         // 所要代理的目标地址
         // target: 'http://localhost:4000/',
-        target: 'http://localhost:3031/',
+        target: 'http://localhost:3000/',
         changeOrigin: true,
       },
     },

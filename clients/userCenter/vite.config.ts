@@ -49,9 +49,9 @@ export default defineConfig({
       //   changeOrigin: true,
       // },
       '/api': {
-        target: 'http://127.0.0.1:3031', // 假设后端服务运行在 3032 端口
+        target: 'http://127.0.0.1:4000', // 假设后端服务运行在 3032 端口
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''), // 去掉代理路径中的 '/backend'
+        // rewrite: (path) => path.replace(/^\/api/, ''), // 去掉代理路径中的 '/backend'
       },
     },
   },
