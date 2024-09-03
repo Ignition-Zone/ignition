@@ -7,7 +7,7 @@ export class AddSiteDto {
   id?: string;
 
   @ApiProperty({
-    example: 'http://localhost:3004/api/doc-json',
+    example: 'http://localhost:3004/doc',
     description: '解析URL',
   })
   @IsNotEmpty()
